@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodata Maker | Marathi & English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="form-panel">
+      <h1>Biodata Maker</h1>
+      <p>Create a beautiful biodata in English or Marathi and download it as a PDF.</p>
+
+      <form id="biodataForm">
+        <label for="language">Language / भाषा</label>
+        <select id="language" name="language">
+          <option value="en">English</option>
+          <option value="mr">मराठी</option>
+        </select>
+
+        <label for="fullName" data-i18n="name">Full Name</label>
+        <input id="fullName" name="fullName" type="text" required />
+
+        <label for="dob" data-i18n="dob">Date of Birth</label>
+        <input id="dob" name="dob" type="date" required />
+
+        <label for="birthTime" data-i18n="birthTime">Birth Time</label>
+        <input id="birthTime" name="birthTime" type="time" />
+
+        <label for="birthPlace" data-i18n="birthPlace">Birth Place</label>
+        <input id="birthPlace" name="birthPlace" type="text" />
+
+        <label for="height" data-i18n="height">Height</label>
+        <input id="height" name="height" type="text" placeholder="e.g. 5 ft 8 in" />
+
+        <label for="education" data-i18n="education">Education</label>
+        <input id="education" name="education" type="text" />
+
+        <label for="occupation" data-i18n="occupation">Occupation</label>
+        <input id="occupation" name="occupation" type="text" />
+
+        <label for="income" data-i18n="income">Annual Income</label>
+        <input id="income" name="income" type="text" />
+
+        <label for="religion" data-i18n="religion">Religion</label>
+        <input id="religion" name="religion" type="text" />
+
+        <label for="caste" data-i18n="caste">Caste</label>
+        <input id="caste" name="caste" type="text" />
+
+        <label for="subCaste" data-i18n="subCaste">Sub-caste</label>
+        <input id="subCaste" name="subCaste" type="text" />
+
+        <label for="address" data-i18n="address">Address</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+
+        <label for="contact" data-i18n="contact">Contact Number</label>
+        <input id="contact" name="contact" type="tel" required />
+
+        <label for="email" data-i18n="email">Email</label>
+        <input id="email" name="email" type="email" />
+
+        <label for="expectations" data-i18n="expectations">Expectations</label>
+        <textarea id="expectations" name="expectations" rows="3"></textarea>
+
+        <div class="button-row">
+          <button type="button" id="previewBtn">Preview</button>
+          <button type="button" id="pdfBtn">Download PDF</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="preview-panel">
+      <article id="biodataCard" class="biodata-card" aria-live="polite"></article>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
